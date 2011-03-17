@@ -1,4 +1,5 @@
 Array Intersection Bake-off
+===========================
 
 One of those moments where an interview question turns into a research
 project, or is it really a bake off?  The simple problem is demonstrate
@@ -10,7 +11,11 @@ of Python vs. Java vs. Ruby vs. Perl vs. PHP and got a few interesting
 benchmarks.
 
 The original blog post:
-   http://www.skitoy.com/p/array-intersection-bake-off/236
+   (http://www.skitoy.com/p/array-intersection-bake-off/236)
+
+I don't really want to time the file reading and inital array builds, just the
+results.  Timing is left to the language itself, rather than an external "time" wrapper 
+to eliminate startup overhead of the language.
 
 Hopefully I've not encapuslated all of the code -  here's the current standings:
 
