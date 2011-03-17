@@ -17,7 +17,27 @@ I don't really want to time the file reading and inital array builds, just the
 results.  Timing is left to the language itself, rather than an external "time" wrapper 
 to eliminate startup overhead of the language.
 
-Hopefully I've not encapuslated all of the code -  here's the current standings:
+Basic Language Rule
+-------------------
+
+If you add another language the initial "\_1\_" version of the algorithm *must* be compatabile to
+this python version - as a basic standard, from there you can create any number of varients to
+demonstrate how it should be done "correctly" in the language.  But, it at least gives a baseline
+for an algoritm translates language to language.
+
+     def isect(a, b) :
+         output = []
+         htable = {}
+         for i in a :
+             htable[i] = True
+             for i in b :
+                 if htable.get(i, False) :
+                     output.append(i)
+         return output
+
+
+Standings
+---------
 
 c++
     isect_1_cxx | Set   | n = 1000000 : 181272 intersects found in 0.910000 seconds
