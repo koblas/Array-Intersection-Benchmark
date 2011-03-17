@@ -1,0 +1,36 @@
+#!/usr/bin/perl
+
+use strict;
+use Time::HiRes;
+
+my (@x, @y);
+
+my $junk = <>;
+
+while (<>) {
+    my($a, $b) = split;
+
+    push(@x, $a);
+    push(@y, $b);
+}
+
+my $t0 = [Time::HiRes::gettimeofday];
+my @xy = isect(\@x, \@y);
+my $t1 = [Time::HiRes::gettimeofday];
+
+
+print "Set   | n = ",($#x+1)," : ",($#xy+1)," intersects found in ",Time::HiRes::tv_interval($t0, $t1)," seconds\n";
+
+sub isect {
+    my($a, $b) = @_;
+    my(@o, %h);
+
+    for my $i (@$a) {
+        $h{$i} = 1;
+    }
+    for my $i (@$b) {
+        push(@o, $i) if $h{$i};
+    }
+
+    return @o;
+}
