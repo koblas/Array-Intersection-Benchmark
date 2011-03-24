@@ -1,5 +1,5 @@
 
-DIRS=c++ ruby python perl php haskell
+DIRS=c++ ruby python perl php java haskell
 
 bench: 
 	@for dir in $(DIRS); do \
